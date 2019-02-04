@@ -5,20 +5,20 @@ function random(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
 
-function setBG() {
-    if (Math.round(Math.random())) {
-        return "https://www.clipartmax.com/png/middle/254-2548665_big-image-cartoon-grey-cloud-png.png";
-    } else {
-        return "https://www.clipartmax.com/png/middle/254-2548665_big-image-cartoon-grey-cloud-png.png";
-    }
-}
+// function setBG() {
+//     if (Math.round(Math.random())) {
+//         return "https://www.clipartmax.com/png/middle/254-2548665_big-image-cartoon-grey-cloud-png.png";
+//     } else {
+//         return "https://www.clipartmax.com/png/middle/254-2548665_big-image-cartoon-grey-cloud-png.png";
+//     }
+// }
 
 
 
 function dropBox() {
     var length = random(100, ($(".game").width() - 100));
-    var velocity = random(100, 10000);
-    var size = random(50, 150);
+    var velocity = (10000);
+    var size = random();
     var thisBox = $("<div/>", {
         class: "box",
         style: "width:" + size + "px; height:" + size + "px; left:" + length + "px; transition: transform " + velocity + "ms linear;"
@@ -27,9 +27,9 @@ function dropBox() {
     //set data and bg based on data
     thisBox.data("test", Math.round(Math.random()));
     if (thisBox.data("test")) {
-        thisBox.css({ "background": "url('https://www.clipartmax.com/png/middle/254-2548665_big-image-cartoon-grey-cloud-png.png')", "background-size": "contain" });
+        thisBox.css({ "background": "url('https://purepng.com/public/uploads/large/purepng.com-cloudcloudskycloudyclearskynature-221519326518lfbqg.png')", "background-size": "cover" });
     } else {
-        thisBox.css({ "background": "url('https://www.clipartmax.com/png/middle/254-2548665_big-image-cartoon-grey-cloud-png.png')", "background-size": "contain" });
+        thisBox.css({ "background": "url('https://purepng.com/public/uploads/large/purepng.com-cloudcloudskycloudyclearskynature-221519326518lfbqg.png')", "background-size": "cover" });
     }
 
 
@@ -39,7 +39,7 @@ function dropBox() {
     //random start for animation
     setTimeout(function () {
         thisBox.addClass("move");
-    }, random(0, 5000));
+    }, random(0, 10000));
 
     //remove this object when animation is over
     thisBox.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
@@ -48,45 +48,12 @@ function dropBox() {
         });
 }
 
-for (i = 0; i < 10; i++) {
-    dropBox();
-}
-
-$(document).on('click', '.box', function () {
-
-
-    if ($(this).data("test")) {
-        score += 1;
-    } else {
-        score -= 1;
-    }
-
-    $(".score").html(score);
-    $(this).remove();
-});
+// for (i = 0; i < 10; i++) {
+//     dropBox();
+// }
 
 var runGame = setInterval(function () {
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 5; i++) {
         dropBox();
     }
-}, 5000);
-
-function countdown() {
-    var seconds = 60;
-    function tick() {
-        var counter = document.getElementById("counter");
-        seconds--;
-        counter.innerHTML = (seconds < 10 ? "0" : "") + String(seconds) + "S";
-        if (seconds > 0) {
-            setTimeout(tick, 1000);
-            draw();
-            update();
-        } else {
-            alert("Game over");
-            clearInterval(runGame);
-        }
-    }
-    tick();
-}
-
-countdown();
+}, 10000);
