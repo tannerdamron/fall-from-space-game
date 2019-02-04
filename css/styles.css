@@ -6,16 +6,6 @@
   overflow: hidden;
 }
 
-.score{
-  font-size: 500px;
-  z-index: 20;
-  font-family: arial;
-  color: #d7e4d9;
-  user-select:none;
-  width:100%;
-  text-align:center;
-}
-
 .box{
   
   width: 100px;
@@ -31,15 +21,8 @@
    transform:translateY(120vh);
 }
 
-.counter{
-  width:100%;
-  margin: 0 auto;
-  text-align:center;
-  font-family:arial;
-  color:red;
-  font-weight:bold;
-  padding-top:10px;
-  font-size:20px;
-  position:relative;
-  z-index:9999;
+body.transform {
+  transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
 }
