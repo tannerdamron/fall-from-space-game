@@ -117,7 +117,7 @@ function updateGameArea() {
     }
     myGameArea.clear();
     myGameArea.frameNo += 1;
-    if (myGameArea.frameNo == 1 || everyinterval(300)) {
+    if (myGameArea.frameNo == 1 || everyinterval(100)) {
         y = myGameArea.canvas.height;
         minHeight = 0;
         maxHeight = 0;
@@ -125,8 +125,8 @@ function updateGameArea() {
         minGap = 300;
         maxGap = 600;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(10, height, "../img/cloud.png", y, 0, "image"));
-        myObstacles.push(new component(10, y - height - gap, "../img/cloud.png", y, height + gap, "image"));
+        myObstacles.push(new component(0, 0, "../img/cloud.png", y, 750, "image"));
+        myObstacles.push(new component(0, 0, "../img/cloud.png", y, 750, "image"));
       }
     for (i = 0; i < myObstacles.length; i += 1) {
       myObstacles[i].y += -1;
