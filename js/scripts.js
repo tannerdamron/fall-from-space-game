@@ -1,3 +1,10 @@
+// Title Screen
+
+$(".click").click(function(event) {
+    $("#title").hide();
+});
+
+
 
 var myGamePiece;
 var obstacleOne;
@@ -10,7 +17,7 @@ var myMusic;
 // start game function
 
 function startGame() {
-    
+    $("#title").hide();
     myGamePiece = new component(40, 70, "../img/astronaut.png", 500, 150, "image");
     myScore = new component("25px", "Consolas", "red", 100, 30, "text");
     myMusic = new sound("../music/space.mp3");
@@ -114,8 +121,8 @@ function component(width, height, color, x, y, type) {
 function updateGameArea() {
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
-    if (myGameArea.keys && myGameArea.keys[37]) {myGamePiece.speedX = -6; }
-    if (myGameArea.keys && myGameArea.keys[39]) {myGamePiece.speedX = +6; }
+    if (myGameArea.keys && myGameArea.keys[37]) {myGamePiece.speedX = -6; myGamePiece.image.src = "../img/astronaut.png" }
+    if (myGameArea.keys && myGameArea.keys[39]) {myGamePiece.speedX = +6; myGamePiece.image.src = "../img/astronaut-right.png"}
     if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speedY = -6; }
     if (myGameArea.keys && myGameArea.keys[40]) {myGamePiece.speedY = +6; }
 

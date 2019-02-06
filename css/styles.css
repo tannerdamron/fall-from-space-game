@@ -6,10 +6,28 @@
 }
 
 canvas {
+  text-align: center;
   position: absolute;
   width: 1920px;
   height: 1080px;
   background-image: url("../img/canvas-gif.gif");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#title {
+  background-image: url("../img/title.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+p {
+  text-align: center;
+  color: yellow;
+  font-size: 50px;
+  margin: 25% 25% 0 0; 
+}
+
+.click:hover {
+  cursor: pointer;
 }
