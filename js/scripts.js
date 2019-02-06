@@ -1,10 +1,7 @@
 
-function random(min, max) {
-    return Math.round(Math.random() * (max - min) + min);
-}
-
 var myGamePiece;
 var obstacleOne;
+var myScore;
 var myObstacles = [];
 
 
@@ -12,8 +9,8 @@ var myObstacles = [];
 
 function startGame() {
     myGameArea.start();
-    myGamePiece = new component(100, 100, "../img/astronaut.png", 500, 500, "image");
-    obstacleOne = new component(50, 50, "../img/cloud.png", "image")
+    myGamePiece = new component(50, 50, "../img/astronaut.svg", 500, 150, "image");
+    myScore = new component("25px", "Consolas", "red", 100, 30, "text");
 }
 
 // add canvas onto page when start button is pressed
@@ -56,8 +53,8 @@ function component(width, height, color, x, y, type) {
         this.image = new Image();
         this.image.src = color;
     }
-    this.width = 100;
-    this.height = 100;
+    this.width = width;
+    this.height = height;
     this.speedX = 0;
     this.speedY = 0;
     this.x = x;
@@ -69,10 +66,14 @@ function component(width, height, color, x, y, type) {
                 this.x,
                 this.y,
                 this.width, this.height);
+        } else if (this.type == "text") {
+            ctx.font = this.width + " " + this.height;
+            ctx.fillStyle = color;
+            ctx.fillText(this.text, this.x, this.y); 
         } else {
         ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
-        }
+        } 
     }
     this.newPos = function () {
         this.x += this.speedX;
@@ -103,35 +104,42 @@ function component(width, height, color, x, y, type) {
 function updateGameArea() {
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
-    if (myGameArea.keys && myGameArea.keys[37]) {myGamePiece.speedX = -7; }
-    if (myGameArea.keys && myGameArea.keys[39]) {myGamePiece.speedX = +7; }
-    if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speedY = -7; }
-    if (myGameArea.keys && myGameArea.keys[40]) {myGamePiece.speedY = +7; }
+    if (myGameArea.keys && myGameArea.keys[37]) {myGamePiece.speedX = -6; }
+    if (myGameArea.keys && myGameArea.keys[39]) {myGamePiece.speedX = +6; }
+    if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speedY = -6; }
+    if (myGameArea.keys && myGameArea.keys[40]) {myGamePiece.speedY = +6; }
 
     var y, x;
     for (i = 0; i < myObstacles.length; i += 1) {
       if (myGamePiece.crashWith(myObstacles[i])) {
         myGameArea.stop();
+        alert("GAME OVER!")
         return;
       } 
     }
     myGameArea.clear();
     myGameArea.frameNo += 1;
-    if (myGameArea.frameNo == 1 || everyinterval(100)) {
+    if (myGameArea.frameNo == 1 || everyinterval(300)) {
         y = myGameArea.canvas.height;
         minHeight = 0;
         maxHeight = 0;
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-        minGap = 300;
+        randomSpawn = Math.floor(Math.random()*(1100-0+1)+0);
+        randomHeight = Math.floor(Math.random()*(100-40+1)+60);
+        randomWidth = Math.floor(Math.random()*(100-40+1)+60);
+        minGap = 100;
         maxGap = 600;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(0, 0, "../img/cloud.png", y, 750, "image"));
-        myObstacles.push(new component(0, 0, "../img/cloud.png", y, 750, "image"));
-      }
+        myObstacles.push(new component(125, 63, "../img/moon.svg", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+        myObstacles.push(new component(150, 150, "../img/jupiter.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+        myObstacles.push(new component(60, 217, "../img/rocket-01.svg", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+      } else
     for (i = 0; i < myObstacles.length; i += 1) {
-      myObstacles[i].y += -1;
-      myObstacles[i].update();
+    myObstacles[i].y += -1;
+    myObstacles[i].update();
     }
+    myScore.text = "SCORE: " + myGameArea.frameNo;
+    myScore.update();
     myGamePiece.newPos(); 
     myGamePiece.update();
-    }
+}
