@@ -9,7 +9,7 @@ canvas {
   position: absolute;
   width: 1920px;
   height: 1080px;
-  background-image: url("../img/space-bg.png");
+  background-image: url("../img/canvas-gif.gif");
   background-repeat: no-repeat;
   background-size: cover;
 }
