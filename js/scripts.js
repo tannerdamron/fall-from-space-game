@@ -3,14 +3,20 @@ var myGamePiece;
 var obstacleOne;
 var myScore;
 var myObstacles = [];
+var mySound;
+var myMusic;
 
 
 // start game function
 
 function startGame() {
-    myGameArea.start();
-    myGamePiece = new component(50, 50, "../img/astronaut.svg", 500, 150, "image");
+    
+    myGamePiece = new component(40, 70, "../img/astronaut.png", 500, 150, "image");
     myScore = new component("25px", "Consolas", "red", 100, 30, "text");
+    myMusic = new sound("../music/space.mp3");
+    mySound = new sound("../music/lose.mp3");
+    myMusic.play();
+    myGameArea.start();
 }
 
 // add canvas onto page when start button is pressed
@@ -35,7 +41,7 @@ var myGameArea = {
     clear: function () {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     },
-    stop : function() {
+    stop: function() {
         clearInterval(this.interval);
       } 
 }
@@ -80,14 +86,14 @@ function component(width, height, color, x, y, type) {
         this.y += this.speedY;
     }
     this.crashWith = function(otherobj) {
-        var myleft = this.x;
-        var myright = this.x + (this.width);
-        var mytop = this.y;
-        var mybottom = this.y + (this.height);
-        var otherleft = otherobj.x;
-        var otherright = otherobj.x + (otherobj.width);
-        var othertop = otherobj.y;
-        var otherbottom = otherobj.y + (otherobj.height);
+        var myleft = this.x-20;
+        var myright = this.x + (this.width)-20;
+        var mytop = this.y-20;
+        var mybottom = this.y + (this.height)-20;
+        var otherleft = otherobj.x-25;
+        var otherright = otherobj.x + (otherobj.width)-30;
+        var othertop = otherobj.y+25;
+        var otherbottom = otherobj.y + (otherobj.height)-30;
         var crash = true;
         if ((mybottom < othertop) ||
         (mytop > otherbottom) ||
@@ -96,6 +102,10 @@ function component(width, height, color, x, y, type) {
           crash = false;
         }
         return crash;
+      }
+      this.speedIncrease = function() {
+          this.speedX+200;
+          this.speedY+200;
       }
 }
 
@@ -113,6 +123,8 @@ function updateGameArea() {
     for (i = 0; i < myObstacles.length; i += 1) {
       if (myGamePiece.crashWith(myObstacles[i])) {
         myGameArea.stop();
+        mySound.play();
+        myMusic.stop();
         alert("GAME OVER!")
         return;
       } 
@@ -124,16 +136,22 @@ function updateGameArea() {
         minHeight = 0;
         maxHeight = 0;
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-        randomSpawn = Math.floor(Math.random()*(1100-0+1)+0);
-        randomHeight = Math.floor(Math.random()*(100-40+1)+60);
-        randomWidth = Math.floor(Math.random()*(100-40+1)+60);
-        minGap = 100;
-        maxGap = 600;
+        minGap = 300;
+        maxGap = 700;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(125, 63, "../img/moon.svg", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
-        myObstacles.push(new component(150, 150, "../img/jupiter.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
-        myObstacles.push(new component(60, 217, "../img/rocket-01.svg", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
-      } else
+        myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+        myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+        myObstacles.push(new component(40, 140, "../img/rocket.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+        myObstacles.push(new component(Math.floor(Math.random()*(150-0+1)+0), Math.floor(Math.random()*(150-0+1)+0), "../img/asteroid.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+        if (myGameArea.frameNo > 300) {
+            myObstacles.push(new component(70, 60, "../img/moon.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));        
+            myObstacles.push(new component(170, 150, "../img/jupiter.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+            myObstacles.push(new component(125, 105, "../img/neptune.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+        } if (myGameArea.frameNo > 600) {
+            myObstacles.push(new component(180, 129, "../img/satellite.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+            myObstacles.push(new component(200, 100, "../img/saturn.png", Math.floor(Math.random()*(1100-0+1)+0), 750, "image"));
+        }
+    }
     for (i = 0; i < myObstacles.length; i += 1) {
     myObstacles[i].y += -1;
     myObstacles[i].update();
@@ -143,3 +161,20 @@ function updateGameArea() {
     myGamePiece.newPos(); 
     myGamePiece.update();
 }
+
+// Sound
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+      this.sound.play();
+    }
+    this.stop = function(){
+      this.sound.pause();
+    }
+  }
