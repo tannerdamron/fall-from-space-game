@@ -26,12 +26,22 @@ canvas {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.col-lg-6{
+  padding-right: 500px;
+}
+#titlepagestuff {
+  padding: 500px;
+}
 
-#titleWords {
-  text-align: center;
-  color: yellow;
-  font-size: 50px;
-  margin: 25% 25% 0 0; 
+.movePlayButton{
+width: 50%;
+height: auto;
+
+}
+.moveInstructions{
+  width: 50%;
+  height: auto;
+
 }
 
 .click:hover {
@@ -41,7 +51,7 @@ canvas {
 @font-face {
   font-family: 'starjedi';
   src: url('../css/Starjedi.ttf');
-} 
+}
 
 @font-face {
   font-family: gameover;
