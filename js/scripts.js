@@ -10,8 +10,9 @@ var myMusic;
 
 function startGame() {
     $("#title").hide();
+    myObstacles = [];
     myGamePiece = new component(40, 70, "../img/astronaut.png", 500, 150, "image");
-    myScore = new component("25px", "Consolas", "red", 100, 30, "text");
+    myScore = new component("25px", "starjedi", "gold", 100, 30, "text");
     myMusic = new sound("../music/space.mp3");
     mySound = new sound("../music/lose.mp3");
     myMusic.play();
@@ -23,8 +24,8 @@ function startGame() {
 var myGameArea = {
     canvas: document.createElement('canvas'),
     start: function () {
-        this.canvas.width = 1614;
-        this.canvas.height = 750;
+        this.canvas.width = 1920;
+        this.canvas.height = 1080;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
@@ -127,6 +128,7 @@ function updateGameArea() {
             $(myGameArea.canvas).hide();
             $(".endingScreen").show();
             $(".highScore").text(" " + myGameArea.frameNo);
+            return;
         }
     }
     myGameArea.clear();
@@ -138,6 +140,8 @@ function updateGameArea() {
         height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
         minGap = 300;
         maxGap = 700;
+        myObstacles.speedX = 500;
+        myObstacles.speedY = 500;
         sizeRandom = Math.floor(Math.random() * (100 - 50 + 1) + 50);
         gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
         myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 750, "image"));
@@ -157,7 +161,7 @@ function updateGameArea() {
         myObstacles[i].y += -1;
         myObstacles[i].update();
     }
-    myScore.text = "SCORE: " + myGameArea.frameNo;
+    myScore.text = "SCoRE: " + myGameArea.frameNo;
     myScore.update();
     myGamePiece.newPos();
     myGamePiece.update();
