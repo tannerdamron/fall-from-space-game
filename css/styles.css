@@ -36,7 +36,7 @@ canvas {
   background-size: contain;
 }
 
-p {
+#start {
   text-align: center;
   color: yellow;
   font-size: 50px;
@@ -47,3 +47,72 @@ p {
 .click:hover {
   cursor: pointer;
 }
+
+@font-face {
+  font-family: gameover;
+  src: url(../css/gameover.ttf);
+}
+
+.endingScreen {
+  background-image: url("../img/endscreen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 750px;
+  position: relative;
+  overflow: hidden;;
+}
+
+button {
+  border-style: none;
+  background: none;
+  color: #ffd700;
+  font-family: Starjedi;
+  font-size: 25px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#fafa03, #fa0a03);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Starjedi;
+  font-weight: bolder;
+  font-size: 150px;
+  padding-left: 29%;
+}
+
+#tryAgain {
+  margin-left: 45%;
+  border-style: none;
+  background: none;
+  color: #ffd700;
+  font-family: Starjedi;
+  font-size: 25px;
+}
+
+.home {
+  margin-left: 48%;
+  border-style: none;
+  background: none;
+  color: #ffd700;
+  font-family: Starjedi;
+  font-size: 25px;
+}
+
+p {
+  text-align: center;
+  border-style: none;
+  background: none;
+  color: red;
+  font-family: Starjedi;
+  font-size: 25px;
+}
+
+.endingScreen {
+  display: none;
+} 

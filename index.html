@@ -13,9 +13,16 @@
 <body class="game text-center">
     
 
-    <div onclick="startGame()" id="title" class="text-center game">
-         <p><span class="click">Start Game</span></p>
+    <div id="title" class="text-center game">
+         <p id="start"><span onclick="startGame()" class="click">Start Game</span></p>
     </div> 
+    <div class="endingScreen">
+            <h1>Game Over!</h1>
+            <p>Your Score:<span class="highScore"></span></p>
+            <button id="tryAgain">Try Again?</button>
+            <br>
+            <button class="home">Home</button>
+        </div>     
 
 </body>
 </html>

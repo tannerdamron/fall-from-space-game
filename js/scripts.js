@@ -124,8 +124,9 @@ function updateGameArea() {
         myGameArea.stop();
         mySound.play();
         myMusic.stop();
-        alert("GAME OVER!");
-        return;
+        $(myGameArea).hide();
+        $(".endingScreen").show();
+        $(".highScore").text(" " + myGameArea.frameNo);
       } 
     }
     myGameArea.clear();
@@ -143,14 +144,18 @@ function updateGameArea() {
         myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
         myObstacles.push(new component(40, 140, "../img/rocket.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
         myObstacles.push(new component(sizeRandom, sizeRandom, "../img/asteroid.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
-        if (myGameArea.frameNo > 300) {
+        myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
+        myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
+        myObstacles.push(new component(40, 140, "../img/rocket.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
+        myObstacles.push(new component(sizeRandom, sizeRandom, "../img/asteroid.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
+        if (myGameArea.frameNo > 1000) {
             myObstacles.push(new component(70, 60, "../img/moon.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));        
             myObstacles.push(new component(170, 150, "../img/jupiter.png", Math.floor(Math.random()*(19200-0+1)+0), 1080, "image"));
             myObstacles.push(new component(125, 105, "../img/neptune.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
-        } if (myGameArea.frameNo > 600) {
+        } if (myGameArea.frameNo > 2000) {
             myObstacles.push(new component(180, 129, "../img/satellite.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
             myObstacles.push(new component(200, 100, "../img/saturn.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
-        } if (myGameArea.frameNo > 2000) {
+        } if (myGameArea.frameNo > 3000) {
             myObstacles.push(new component(400, 400, "../img/earth.png", Math.floor(Math.random()*(1920-0+1)+0), 1080, "image"));
         }
     }
@@ -180,3 +185,12 @@ function sound(src) {
       this.sound.pause();
     }
   }
+
+  $(document).ready(function() {
+    $("#tryAgain").click(function(event) {
+        event.preventDefault();
+        $(".endingScreen").hide();
+        $(myGameArea).show();
+        startGame();
+    });
+});
