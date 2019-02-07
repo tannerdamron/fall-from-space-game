@@ -1,21 +1,25 @@
 body {
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   margin: auto;
+}
+
+.container-fluid {
+  padding: 0;
 }
 
 
 .game{
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
   overflow: hidden;
 }
 
 canvas {
   text-align: center;
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   background-image: url("../img/canvas-gif.gif");
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,7 +28,7 @@ canvas {
 #title {
   background-image: url("../img/title.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 .col-lg-6{
   padding-right: 500px;
@@ -67,14 +71,10 @@ height: auto;
   background-image: url("../img/endscreen.png");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   display: none;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 h1 {
@@ -88,23 +88,19 @@ h1 {
 }
 
 #tryAgain {
-  text-align: center;
-  border-style: none;
-  background: none;
-  color: gold;
-  text-shadow: black 2px 2px;
-  font-family: starjedi;
-  font-size: 25px;
+  height: 100px;
+}
+
+#tryAgain:hover{
+  cursor: pointer;
+}
+
+.home:hover{
+  cursor: pointer;
 }
 
 .home {
-  text-align: center;
-  border-style: none;
-  background: none;
-  color: gold;
-  text-shadow: black 2px 2px;
-  font-family: starjedi;
-  font-size: 25px;
+  height: 100px;
 }
 
 #endScore {
@@ -114,5 +110,27 @@ h1 {
   color: gold;
   text-shadow: black 2px 2px;
   font-family: starjedi;
-  font-size: 25px;
+  font-size: 100px;
+  margin-top: 100px;
+  text-shadow: 0 1px 0 #ccc,
+  0 2px 0 #c9c9c9,
+  0 3px 0 #bbb,
+  0 4px 0 #b9b9b9,
+  0 5px 0 #aaa,
+  0 6px 1px rgba(0,0,0,.1),
+  0 0 5px rgba(0,0,0,.1),
+  0 1px 3px rgba(0,0,0,.3),
+  0 3px 5px rgba(0,0,0,.2),
+  0 5px 10px rgba(0,0,0,.25),
+  0 10px 10px rgba(0,0,0,.2),
+  0 20px 20px rgba(0,0,0,.15);
+}
+
+#infoPanel {
+  height: 300px;
+  display: none;
+}
+
+#infoButton:hover {
+  cursor: pointer;
 }
