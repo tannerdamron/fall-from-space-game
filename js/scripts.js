@@ -183,6 +183,14 @@ function sound(src) {
         this.sound.pause();
     }
 }
+$(document).ready(function(){
+  $("#instructions").click(function(event){
+    event.preventDefault();
+    $("#instructPopUp").toggle();
+
+
+  });
+});
 
 $(document).ready(function () {
     $("#tryAgain").click(function (event) {

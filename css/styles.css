@@ -43,6 +43,11 @@ height: auto;
   height: auto;
 
 }
+#instructPopUp{
+  display:none;
+  width:80%;
+  height: auto;
+}
 
 .click:hover {
   cursor: pointer;
