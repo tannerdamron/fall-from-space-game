@@ -1,5 +1,5 @@
 # Spaceboi (Javascript Game)
-## by Tanner Damron, Porter Savage, Clara Munroe, Maddy Haldeman, and Jimmy Zebroski
+## by Tanner Damron, Porter Savage, Clara Munro, Maddy Haldeman, and Jimmy Zebroski
 
 ## Description
 A vanilla JavaScript game that the player controls the astronaut and tries to move around and avoid all obstacles, crashing into any of them will end the game and show the players score.
@@ -31,4 +31,4 @@ A vanilla JavaScript game that the player controls the astronaut and tries to mo
 * JavaScript
 * jQuery
 
-Copyright (c) 2019 Tanner Damron, Porter Savage, Clara Munroe, Maddy Haldeman, and Jimmy Zebroski.
+Copyright (c) 2019 Tanner Damron, Porter Savage, Clara Munro, Maddy Haldeman, and Jimmy Zebroski.
