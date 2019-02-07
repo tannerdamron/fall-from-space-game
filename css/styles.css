@@ -2,6 +2,17 @@ body {
   width: 100vw;
   height: 100vh;
   margin: auto;
+  background: url("../img/background.png");
+  background-size: 100%;
+  
+}
+
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-top: 10%;
 }
 
 .container-fluid {
@@ -12,6 +23,7 @@ body {
 .game{
   width: 100vw;
   height: 100vh;
+
   margin: 0 auto;
   overflow: hidden;
 }
@@ -25,25 +37,23 @@ canvas {
   background-size: cover;
 }
 
-#title {
-  background-image: url("../img/title.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+background-size: cover;
 }
 .col-lg-6{
   padding-right: 500px;
 }
+
 #titlepagestuff {
-  padding: 500px;
+  padding: 5%;
 }
 
 .movePlayButton{
-width: 50%;
+width: 40%;
 height: auto;
 
 }
 .moveInstructions{
-  width: 50%;
+  width: 40%;
   height: auto;
 
 }
