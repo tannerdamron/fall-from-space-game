@@ -1,6 +1,6 @@
 body {
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   margin: auto;
 }
 
@@ -10,16 +10,16 @@ body {
 
 
 .game{
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
   overflow: hidden;
 }
 
 canvas {
   text-align: center;
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   background-image: url("../img/canvas-gif.gif");
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,7 +28,7 @@ canvas {
 #title {
   background-image: url("../img/title.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 #titleWords {
@@ -56,8 +56,8 @@ canvas {
   background-image: url("../img/endscreen.png");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   display: none;
 }
