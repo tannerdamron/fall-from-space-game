@@ -4,6 +4,10 @@ body {
   margin: auto;
 }
 
+.container-fluid {
+  padding: 0;
+}
+
 
 .game{
   width: 1920px;
