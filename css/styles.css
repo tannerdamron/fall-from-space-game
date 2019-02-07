@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Starjedi';
+  src: url('../css/Starjedi.ttf');
+} 
+
 .game{
   width: 100%;
   height: 750px;
@@ -5,9 +10,15 @@
   overflow: hidden;;
 }
 
+body {
+  width: 1920px;
+  height: 1080px;
+}
+
 canvas {
+  display: block;
+  margin: auto;
   text-align: center;
-  position: absolute;
   width: 1920px;
   height: 1080px;
   background-image: url("../img/canvas-gif.gif");
@@ -16,6 +27,10 @@ canvas {
 }
 
 #title {
+  width: 1920px;
+  height: 1080px;
+  display: block;
+  margin: auto;
   background-image: url("../img/title.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -25,7 +40,8 @@ p {
   text-align: center;
   color: yellow;
   font-size: 50px;
-  margin: 25% 25% 0 0; 
+  margin: 40% 10% 0 0; 
+  position: static;
 }
 
 .click:hover {
