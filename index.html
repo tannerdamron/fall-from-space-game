@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 
-<body class="game transform">
+<body class="game">
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-12">
@@ -21,12 +21,23 @@
                 </div>
                 <div class="game">
                     <div class="endingScreen">
-                        <h1>Game over!</h1>
+                        <div class="col-12">
+                            <img src="img/gameover.png" class="gameOverImage">
+                        </div>
                         <div id="scoreTryHome">
                             <p id="endScore">Your Score:<span class="highScore"></span></p>
-                            <button id="tryAgain">Try Again?</button>
-                            <br>
-                            <button class="home">Home</button>
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="img/tryAgainButton.png" id="tryAgain">
+                                </div>
+                                <div class="col-6">
+                                    <img src="img/homeButton.png" class="home">
+                                </div>
+                            </div>
+                        </div>
+                        <img id="infoButton" src="img/infobutton.png" alt="image with click functionality for showing info on game creators.">
+                        <div class="createrInfo">
+                            <img id="infoPanel" src="img/info.png">
                         </div>
                     </div>
                 </div>

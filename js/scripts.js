@@ -10,6 +10,7 @@ var myMusic;
 
 function startGame() {
     $("#title").hide();
+    $(myGameArea.canvas).show();
     myObstacles = [];
     myGamePiece = new component(40, 70, "../img/astronaut.png", 500, 150, "image");
     myScore = new component("25px", "starjedi", "gold", 100, 30, "text");
@@ -208,5 +209,15 @@ $(document).ready(function () {
         $(".endingScreen").hide();
         $(myGameArea.canvas).show();
         startGame();
+        
+    });
+    $(".home").click(function (event) {
+        event.preventDefault();
+        $(".endingScreen").hide();
+        $("#title").show();
+    });
+    $("#infoButton").click(function(event) {
+        event.preventDefault();
+        $("#infoPanel").toggle();
     });
 });
