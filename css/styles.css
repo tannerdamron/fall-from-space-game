@@ -1,13 +1,21 @@
 body {
-  width: 1920px;
-  height: 1080px;
+  /* width: 1920px;
+  height: 1080px; */
   margin: auto;
+  background: url("../img/background.png");
+  background-size: 100%;
+  
 }
 
-
-.game{
-  width: 1920px;
-  height: 1080px;
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-top: 10%;
+}
+.game {
+  /* width: 1920px;
+  height: 1080px; */
   margin: 0 auto;
   overflow: hidden;
 }
@@ -21,25 +29,23 @@ canvas {
   background-size: cover;
 }
 
-#title {
+/* #title {
   background-image: url("../img/title.png");
   background-repeat: no-repeat;
   background-size: contain;
-}
-.col-lg-6{
-  padding-right: 500px;
-}
+} */
+
 #titlepagestuff {
-  padding: 500px;
+  padding: 5%;
 }
 
 .movePlayButton{
-width: 50%;
+width: 40%;
 height: auto;
 
 }
 .moveInstructions{
-  width: 50%;
+  width: 40%;
   height: auto;
 
 }
