@@ -20,6 +20,12 @@ A vanilla JavaScript game that the player controls the astronaut and tries to mo
 * Input: "Moves into obstacle"
 * Output: "Game ends"
 
+### Setup Instructions
+* Clone repository
+* Add it to your desktop using "git clone""(repository link).""
+* Open in preferred text editor to see all code used
+* Use Live Server or server of choice (MAMP etc.) to run the game
+
 ### Known Bugs
 * Player can leave the screen going up or going down
 * Hitbox of player isn't pixel perfect
