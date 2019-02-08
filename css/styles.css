@@ -144,3 +144,11 @@ h1 {
 #infoButton:hover {
   cursor: pointer;
 }
+
+#infoButton {
+  width: 10%;
+  height: auto;
+  padding:2%;
+  position: fixed;
+  bottom: 5%;
+}

@@ -141,45 +141,45 @@ function updateGameArea() {
         gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
         myObstacles.push(new component(1, 1080, "../img/black-line.png", 1, 0, "image"));
         myObstacles.push(new component(1, 1080, "../img/black-line.png", 1920, 0, "image"));
-        myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-        myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-        myObstacles.push(new component(40, 140, "../img/rocket.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
+        myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+        myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+        myObstacles.push(new component(40, 140, "../img/rocket.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+        myObstacles.push(new component(sizeRandom, sizeRandom, "../img/asteroid.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+        myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+        myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+        myObstacles.push(new component(40, 140, "../img/rocket.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
         myObstacles.push(new component(sizeRandom, sizeRandom, "../img/asteroid.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-        myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-        myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-        myObstacles.push(new component(40, 140, "../img/rocket.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-        myObstacles.push(new component(sizeRandom, sizeRandom, "../img/asteroid.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-        myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-        myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-        myObstacles.push(new component(40, 140, "../img/rocket.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-        myObstacles.push(new component(sizeRandom, sizeRandom, "../img/asteroid.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
+        myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+        myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+        myObstacles.push(new component(40, 140, "../img/rocket.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+        myObstacles.push(new component(sizeRandom, sizeRandom, "../img/asteroid.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
         if (myGameArea.frameNo > 500) {
-            myObstacles.push(new component(70, 60, "../img/moon.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(170, 150, "../img/jupiter.png", Math.floor(Math.random() * (19200 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(125, 105, "../img/neptune.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
+            myObstacles.push(new component(70, 60, "../img/moon.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(170, 150, "../img/jupiter.png", Math.floor(Math.random() * (19200 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(125, 105, "../img/neptune.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
         } if (myGameArea.frameNo > 1000) {
-            myObstacles.push(new component(180, 129, "../img/satellite.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(200, 100, "../img/saturn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(150, 150, "../img/earth.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
+            myObstacles.push(new component(180, 129, "../img/satellite.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(200, 100, "../img/saturn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(150, 150, "../img/earth.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
         } if (myGameArea.frameNo > 1500) {
-            myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(150, 150, "../img/earth.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
+            myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(150, 150, "../img/earth.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
         } if (myGameArea.frameNo > 2000) {
-            myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(70, 60, "../img/moon.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(170, 150, "../img/jupiter.png", Math.floor(Math.random() * (19200 - 0 + 1) + 0), 1080, "image"));
+            myObstacles.push(new component(20, 17, "../img/popcorn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(40, 40, "../img/egg.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(70, 60, "../img/moon.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(170, 150, "../img/jupiter.png", Math.floor(Math.random() * (19200 - 0 + 1) + 0), 1500, "image"));
         } if (myGameArea.frameNo > 3000) {
-            myObstacles.push(new component(150, 150, "../img/earth.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(200, 100, "../img/saturn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(70, 60, "../img/moon.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(170, 150, "../img/jupiter.png", Math.floor(Math.random() * (19200 - 0 + 1) + 0), 1080, "image"));
+            myObstacles.push(new component(150, 150, "../img/earth.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(200, 100, "../img/saturn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(70, 60, "../img/moon.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(170, 150, "../img/jupiter.png", Math.floor(Math.random() * (19200 - 0 + 1) + 0), 1500, "image"));
         } if (myGameArea.frameNo > 4000) {
-            myObstacles.push(new component(500, 500, "../img/alien.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(200, 100, "../img/saturn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(70, 60, "../img/moon.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1080, "image"));
-            myObstacles.push(new component(170, 150, "../img/jupiter.png", Math.floor(Math.random() * (19200 - 0 + 1) + 0), 1080, "image"));
+            myObstacles.push(new component(500, 500, "../img/alien.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(200, 100, "../img/saturn.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(70, 60, "../img/moon.png", Math.floor(Math.random() * (1920 - 0 + 1) + 0), 1500, "image"));
+            myObstacles.push(new component(170, 150, "../img/jupiter.png", Math.floor(Math.random() * (19200 - 0 + 1) + 0), 1500, "image"));
         }
     }
     for (i = 0; i < myObstacles.length; i += 1) {
