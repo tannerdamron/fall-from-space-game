@@ -23,7 +23,6 @@ body {
 .game{
   width: 100vw;
   height: 100vh;
-
   margin: 0 auto;
   overflow: hidden;
 }
@@ -98,7 +97,7 @@ h1 {
 }
 
 #tryAgain {
-  height: 100px;
+  height: 50px;
 }
 
 #tryAgain:hover{
@@ -110,7 +109,7 @@ h1 {
 }
 
 .home {
-  height: 100px;
+  height: 50px;
 }
 
 #endScore {
@@ -120,13 +119,13 @@ h1 {
   color: gold;
   text-shadow: black 2px 2px;
   font-family: starjedi;
-  font-size: 100px;
+  font-size: 40px;
   margin-top: 100px;
   text-shadow: 0 1px 0 #ccc,
-  0 2px 0 #c9c9c9,
-  0 3px 0 #bbb,
-  0 4px 0 #b9b9b9,
-  0 5px 0 #aaa,
+  0 2px 0 black,
+  0 3px 0 black,
+  0 4px 0 black,
+  0 5px 0 black,
   0 6px 1px rgba(0,0,0,.1),
   0 0 5px rgba(0,0,0,.1),
   0 1px 3px rgba(0,0,0,.3),
@@ -151,4 +150,9 @@ h1 {
   padding:2%;
   position: fixed;
   bottom: 5%;
+}
+
+#gameOverImage {
+  width: 25vw;
+  height: 25vh;
 }
