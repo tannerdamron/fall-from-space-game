@@ -233,5 +233,11 @@ $(document).ready(function () {
     $("#infoButton").click(function(event) {
         event.preventDefault();
         $("#infoPanel").toggle();
+        $("#infoButton").hide();
+    });
+    $("#infoPanel").click(function(event) {
+        event.preventDefault();
+        $("#infoPanel").hide();
+        $("#infoButton").show();
     });
 });
