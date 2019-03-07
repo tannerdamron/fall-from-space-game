@@ -37,4 +37,7 @@ A JavaScript game that the player controls the astronaut and tries to move aroun
 * JavaScript
 * jQuery
 
+### Live URL to play the game
+* http://spaceboi.claramunro.com
+
 Copyright (c) 2019 Tanner Damron, Porter Savage, Clara Munro, Maddy Haldeman, and Jimmy Zebroski.
